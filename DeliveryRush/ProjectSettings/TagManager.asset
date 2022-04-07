@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Pickup
+  - Delivery
+  - Road
+  - OffRoad
+  - FoodItemUI
+  - FoodSprite
+  - Loader
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Road
+  - MiniMappable
+  - OnlyMinimap
+  - PostProcessing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: GROUND
+    uniqueID: 4165789945
+    locked: 0
+  - name: Background
+    uniqueID: 2577535573
+    locked: 0
+  - name: Environment
+    uniqueID: 1481514765
+    locked: 0
+  - name: Player
+    uniqueID: 822498263
+    locked: 0
+  - name: Trees
+    uniqueID: 3235188439
+    locked: 0

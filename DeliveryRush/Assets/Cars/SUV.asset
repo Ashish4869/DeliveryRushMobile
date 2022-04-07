@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d0acb9305b3064d954edf66f64fd08, type: 3}
+  m_Name: SUV
+  m_EditorClassIdentifier: 
+  baseCarSpeed: 10
+  baseCarHandling: 150
+  carhealth: 200
+  carBody: {fileID: 21300000, guid: 1ed9ba05136f04601a60ca02cfee2fd7, type: 3}
+  rDoor: {fileID: 21300000, guid: 52917b299186e4d579af326074d968c6, type: 3}
+  lDoor: {fileID: 21300000, guid: 08b3eb59bf82c47ecb84393980805375, type: 3}
+  capsuleSize: 2.5
