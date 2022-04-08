@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
         _lowGearSpeed = _onRoadSpeed - 7;
         _HighGearRotationSpeed = _OnRoadRotationSpeed - 25f;
         _lowGearRotationSpeed = _OnRoadRotationSpeed + 25f;
+
+        _rotationSpeed = _OnRoadRotationSpeed;
     }
 
     void Update()
@@ -81,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case 1:
-                Debug.Log("hello");
                 verticalDirection = 1;
                 horizontalDirection = 0;
                 break;
@@ -115,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CalcMovment()
     {
+        Debug.Log(_speed);
         //make sure the player cant drive when the seeing the map
         if (!_canDrive)
         {
@@ -125,7 +127,30 @@ public class PlayerMovement : MonoBehaviour
         //change the speed on going offroad/onroad
         _speed = (_onRoad ? _onRoadSpeed : _offRoadSpeed);
 
+        if(_onRoad)
+        {
+            switch (Gear)
+            {
+                case 1:
+                    _speed = _lowGearSpeed;
+                    _rotationSpeed = _lowGearRotationSpeed;
+                    break;
+
+                case 2:
+                    _speed = _onRoadSpeed;
+                    _rotationSpeed = _OnRoadRotationSpeed;
+                    break;
+
+                case 3:
+                    _speed = _HighGearSpeed;
+                    _rotationSpeed = _HighGearRotationSpeed;
+                    break;
+            }
+        }
+        
+
         //set Speed as per the gear
+        /*
         if(Input.GetKey(KeyCode.LeftShift) && _onRoad)
         {
             Gear = 1; //Gear 1 = SlowSpeed
@@ -144,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
             _speed = _onRoadSpeed;
             _rotationSpeed = _OnRoadRotationSpeed;
         }
+        */
 
 
         //forward-backward movement of the vehicle
@@ -224,6 +250,11 @@ public class PlayerMovement : MonoBehaviour
     public void NoDirection()
     {
         direction = 0;
+    }
+
+    public void SetGear(int gear)
+    {
+        Gear = gear;
     }
 
 }

@@ -116,4 +116,14 @@ public class MapManager : MonoBehaviour
     {
         _canUseMap = true;
     }
+
+    public void ShowMaps()
+    {
+        if (!_canUseMap)
+        {
+            return;
+        }
+
+        eventManager.OnShowMapEvent();
+    }
 }

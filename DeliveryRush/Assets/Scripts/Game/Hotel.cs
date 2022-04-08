@@ -14,6 +14,12 @@ public class Hotel : MonoBehaviour
     int _HotelID;
 
     [SerializeField]
+    GameObject Order;
+
+    [SerializeField]
+    GameObject Map;
+
+    [SerializeField]
     GameObject _orderUI;
 
     [SerializeField]
@@ -46,10 +52,21 @@ public class Hotel : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.E) && _CanOrder)
         {
             _eventManager.OnOrderingfromRestaurantEvent(_foodItems);
             _CanOrder = false;
+        }
+        */
+
+        if(_CanOrder)
+        {
+            ShowOrderIcon();
+        }
+        else
+        {
+            HideOrderIcon();
         }
     }
 
@@ -66,19 +83,11 @@ public class Hotel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
-        {
-            _orderUI.SetActive(true);
-        }
         _CanOrder = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            _orderUI.SetActive(false);
-        }
         _CanOrder = false;
     }
 
@@ -87,5 +96,23 @@ public class Hotel : MonoBehaviour
     private void OnDestroy()
     {
         EventManager.OnPackageParceled -= SendParcel;
+    }
+
+    void ShowOrderIcon()
+    {
+        Order.SetActive(true);
+        Map.SetActive(false);
+    }
+
+    void HideOrderIcon()
+    {
+        Order.SetActive(false);
+        Map.SetActive(true);
+    }
+
+    public void ShowMenu()
+    {
+        _eventManager.OnOrderingfromRestaurantEvent(_foodItems);
+        _CanOrder = false;
     }
 }
