@@ -13,14 +13,13 @@ public class Hotel : MonoBehaviour
     [SerializeField]
     int _HotelID;
 
+
     [SerializeField]
     GameObject Order;
 
     [SerializeField]
     GameObject Map;
 
-    [SerializeField]
-    GameObject _orderUI;
 
     [SerializeField]
     string _hotelName;
@@ -42,6 +41,7 @@ public class Hotel : MonoBehaviour
         _hotelManager = GetComponentInParent<HotelManager>();
         _eventManager = FindObjectOfType<EventManager>();
         EventManager.OnPackageParceled += SendParcel;
+        
     }
     public int GetHotelID()
     {
@@ -59,15 +59,6 @@ public class Hotel : MonoBehaviour
             _CanOrder = false;
         }
         */
-
-        if(_CanOrder)
-        {
-            ShowOrderIcon();
-        }
-        else
-        {
-            HideOrderIcon();
-        }
     }
 
     //Gets the info and sends to the hotelmanager script
@@ -91,23 +82,12 @@ public class Hotel : MonoBehaviour
         _CanOrder = false;
     }
 
-    public void CanOrder() => _CanOrder = true;
+    public void CanOrder() => _CanOrder = true; 
+    public void CantOrder() => _CanOrder = false;
 
     private void OnDestroy()
     {
         EventManager.OnPackageParceled -= SendParcel;
-    }
-
-    void ShowOrderIcon()
-    {
-        Order.SetActive(true);
-        Map.SetActive(false);
-    }
-
-    void HideOrderIcon()
-    {
-        Order.SetActive(false);
-        Map.SetActive(true);
     }
 
     public void ShowMenu()
@@ -115,4 +95,5 @@ public class Hotel : MonoBehaviour
         _eventManager.OnOrderingfromRestaurantEvent(_foodItems);
         _CanOrder = false;
     }
+
 }

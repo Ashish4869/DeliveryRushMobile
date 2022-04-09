@@ -80,7 +80,6 @@ public class TipsManager : MonoBehaviour
 
     IEnumerator CountTipsUp(int tipsAmount)
     {
-        Debug.Log("Hello");
         while(tipsAmount > 0)
         {
             yield return new WaitForSeconds(0.1f);

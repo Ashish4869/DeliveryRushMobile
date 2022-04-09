@@ -23,7 +23,6 @@ public class NPCSoundController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("hit");
             FindObjectOfType<PlayerDamage>().CalcDamage();
         }
        

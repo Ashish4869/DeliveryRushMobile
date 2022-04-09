@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalDirection;
     int direction;
 
-    int Gear = 0;
+    int Gear = 2;
 
 
     CarSO currentCar;
@@ -116,7 +116,6 @@ public class PlayerMovement : MonoBehaviour
 
     void CalcMovment()
     {
-        Debug.Log(_speed);
         //make sure the player cant drive when the seeing the map
         if (!_canDrive)
         {
