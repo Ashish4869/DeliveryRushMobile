@@ -28,3 +28,6 @@ https://user-images.githubusercontent.com/68268366/162626451-a54bac05-e0db-43dc-
 
 ## Link to the Game!
 <a href="https://akk-3211.itch.io/delivery-rush">![Download](./DeliveryRush/GameLink.png)</a>
+
+## Get It on Google Play!
+<a href="https://play.google.com/store/apps/details?id=com.AKKGames.DeliveryRush">![Download](./DeliveryRush/gplaybadge.png)</a>
